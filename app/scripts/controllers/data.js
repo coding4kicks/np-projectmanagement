@@ -2,9 +2,8 @@
 
 angular.module('timWhitneyApp')
   .controller('DataCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+
+    $scope.enterData = function() {
+      alert('Data Entered');
+    }
   });

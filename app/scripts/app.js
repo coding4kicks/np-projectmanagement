@@ -22,4 +22,20 @@ angular.module('timWhitneyApp', [])
       .otherwise({
         redirectTo: '/'
       });
+  })
+
+  .controller('SideNavCtrl', function($scope) {
+
+    $scope.navState = {};
+    $scope.navState.home = 'active';
+    $scope.navState.charts = '';
+    $scope.navState.data = '';
+
+    $scope.activate = function(navItem){
+      for(var item in $scope.navState) {
+        $scope.navState[item] = '';
+      }
+      $scope.navState[navItem] = 'active';
+    };
+
   });

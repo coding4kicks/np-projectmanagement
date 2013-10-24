@@ -176,26 +176,34 @@
     <!-- end navbar -->
 
     <!-- sidebar -->
-    <div id="sidebar-nav">
+    <div id="sidebar-nav" ng-controller="SideNavCtrl">
         <ul id="dashboard-menu">
-            <li class="active">
-                <div class="pointer">
+            <li ng-class="{{navState.home}}">
+                <div ng-show="navState.home == 'active'" class="pointer">
                     <div class="arrow"></div>
                     <div class="arrow_border"></div>
                 </div>
-                <a href="index.html">
+                <a href="#/" ng-click="activate('home')">
                     <i class="icon-home"></i>
                     <span>Home</span>
                 </a>
             </li>            
-            <li>
-                <a href="#/charts">
+            <li ng-class="{{navState.charts}}">
+                <div ng-show="navState.charts == 'active'" class="pointer">
+                    <div class="arrow"></div>
+                    <div class="arrow_border"></div>
+                </div>
+                <a href="#/charts" ng-click="activate('charts')">
                     <i class="icon-signal"></i>
                     <span>Charts</span>
                 </a>
             </li>
-            <li>
-                <a href="#/data">
+            <li ng-class="{{navState.data}}">
+                <div ng-show="navState.data == 'active'" class="pointer">
+                    <div class="arrow"></div>
+                    <div class="arrow_border"></div>
+                </div>
+                <a href="#/data" ng-click="activate('data')">
                     <i class="icon-edit"></i>
                     <span>Data</span>
                 </a>

@@ -1,0 +1,213 @@
+<!-- this page specific styles -->
+<link rel="stylesheet" href="css/compiled/form-showcase.css" type="text/css" media="screen" />
+<!-- libraries -->
+<link href="css/lib/uniform.default.css" type="text/css" rel="stylesheet">
+<link href="css/lib/select2.css" type="text/css" rel="stylesheet">
+<link href="css/lib/bootstrap.datepicker.css" type="text/css" rel="stylesheet">
+
+<div id="pad-wrapper" class="form-page">
+  <div class="row form-wrapper">
+    <h1>Project Name</h1>
+    <br>
+
+    <div class="col-md-6 column">
+      <form>
+
+        <div class="field-box">
+          <label>Last Name:</label>
+          <div class="col-md-6">
+            <input class="form-control" type="text" />
+          </div>                            
+        </div>
+
+        <div class="field-box">
+          <label>First Name:</label>
+          <div class="col-md-6">
+            <input class="form-control" type="text" />
+          </div>                            
+        </div>
+
+        <div class="field-box">
+          <label>Date of Birth:</label>
+          <div class="col-md-6">
+            <input class="form-control" type="text" />
+          </div>                            
+        </div>
+
+        <div class="field-box">
+          <label>Gender:</label>
+          <div class="col-md-6">
+            <label class="radio-inline" style="width: 80px;">
+              <input type="radio" name="genderRadios" id="genderRadios1" value="male">
+              Male
+            </label>
+            <label class="radio-inline" style="width: 90px;">
+              <input type="radio" name="genderRadios" id="genderRadios2" value="female">
+              Female
+            </label>
+          </div>                                
+        </div>
+
+        <div class="field-box">
+          <label>Race:</label>
+          <div class="col-md-6">
+            <label class="radio-inline" style="width: 50px; padding-left: 10px;">
+              <input type="radio" name="raceRadios" id="raceRadios1" value="aa">
+              AA
+            </label>
+            <label class="radio-inline" style="width: 50px; padding-left: 10px;">
+              <input type="radio" name="raceRadios" id="raceRadios2" value="c">
+              C
+            </label>
+            <label class="radio-inline" style="width: 50px;  padding-left: 10px;">
+              <input type="radio" name="raceRadios" id="raceRadios1" value="l">
+              L
+            </label>
+            <label class="radio-inline" style="width: 50px; padding: 5px 0 0 10px; margin-left: 0;">
+              <input type="radio" name="raceRadios" id="raceRadios2" value="a">
+              A
+            </label>
+            <label class="radio-inline" style="width: 80px; padding: 5px 0 0 10px;">
+              <input type="radio" name="raceRadios" id="raceRadios2" value="other">
+              Other
+            </label>
+          </div>                                
+        </div>
+
+      </form>
+    </div>
+
+    <div class="col-md-6 column">
+      <form>
+
+        <div class="field-box">
+          <label>Unstably Housed:</label>
+          <div class="col-md-6">
+            <label class="radio-inline" style="width: 80px;">
+              <input type="radio" name="housedRadios" id="housedRadios1" value="yes">
+              Yes
+            </label>
+            <label class="radio-inline" style="width: 80px;">
+              <input type="radio" name="housedRadios" id="housedRadios2" value="no" checked>
+              No
+            </label>
+          </div>                                
+        </div>
+
+        <div class="field-box">
+          <label>Limited English:</label>
+          <div class="col-md-6">
+            <label class="radio-inline" style="width: 80px;">
+              <input type="radio" name="englishRadios" id="englishRadios1" value="yes">
+              Yes
+            </label>
+            <label class="radio-inline" style="width: 80px;">
+              <input type="radio" name="englishRadios" id="englishRadios2" value="no" checked>
+              No
+            </label>
+          </div>                                
+        </div>
+
+        <div class="field-box">
+          <label>Time in Minutes:<br>(number only)</label>
+          <div class="col-md-6">
+            <input class="form-control" style="width: 80px;" type="text" />
+          </div>                            
+        </div>
+
+        <div class="field-box">
+          <label>Staff Name:</label>
+          <div class="col-md-6">
+            <input class="form-control" type="text" />
+          </div>                            
+        </div>
+
+        <div class="field-box">
+          <label>Date:</label>
+          <div class="col-md-6">
+            <input type="text" value="03/29/2013" class="form-control input-datepicker" />
+          </div>
+        </div>
+
+      </form>
+    </div>
+
+    <div class="col-md-8 column">
+      <h4>CountyCare Enrollment Action Taken (Check all that apply)</h4>
+      <form>
+
+        <div class="field-box">
+          <label class="checkbox" style="width: 100%;">
+            <input type="checkbox" id="statusCheckbox1" value="info"> Client given educational information
+          </label>
+          <label class="checkbox" style="width: 100%;">
+            <input type="checkbox" id="statusCheckbox2" value="phone"> Phone call made with client
+          </label>
+          <label class="checkbox" style="width: 100%;">
+            <input type="checkbox" id="statusCheckbox3" value="referral"> Client referred to service provider
+          </label>
+            <label style="margin-left: 48px; font-weight: normal; width: 110px; color: #555555;">Name of Provider:</label>
+            <div class="col-md-6">
+              <input class="form-control" type="text" />
+            </div>                            
+        </div>
+
+      </form>
+    </div>
+
+    <div class="col-md-8 column">
+      <h4>Screening Status</h4>
+      <form>
+
+        <div class="field-box">
+          <label class="radio" style="padding-left: 40px;">
+            <input type="radio" name="statusRadios" id="statusRadios1" value="initiated">
+             Application Initiated
+          </label>
+          <label class="radio" style="padding-left: 40px;">
+            <input type="radio" name="statusRadios" id="statusRadios2" value="ineligible">
+             Application Not Initiated Ineligible
+          </label>
+          <label class="radio" style="padding-left: 40px;">
+            <input type="radio" name="statusRadios" id="statusRadios3" value="notInitiated">
+             Application Not Initiated Client Elibible
+          </label>                  
+        </div>
+
+      </form>
+    </div>
+
+    <div class="col-md-8 column">
+      <a class="btn-glow" ng-click="enterData()">Enter Data</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- scripts for this page -->
+<script src="js/wysihtml5-0.3.0.js"></script>
+<!--<script src="http://code.jquery.com/jquery-latest.js"></script>-->
+<script src="js/jquery.uniform.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap.datepicker.js"></script>
+<script src="js/select2.min.js"></script>
+<script src="js/theme.js"></script>
+
+<!-- call this page plugins -->
+<script type="text/javascript">
+    $(function () {
+
+        // add uniform plugin styles to html elements
+        $("input:checkbox, input:radio").uniform();
+
+        // select2 plugin for select elements
+        $(".select2").select2({
+            placeholder: "Select a State"
+        });
+
+        // datepicker plugin
+        $('.input-datepicker').datepicker().on('changeDate', function (ev) {
+            $(this).datepicker('hide');
+        });
+    });
+</script>

@@ -1,0 +1,10 @@
+<div id="pad-wrapper">
+  <h1>Welcome</h1>
+  <p>You now have</p>
+  <ul>
+      <li ng-repeat="thing in awesomeThings">{{thing}}</li>
+  </ul>
+  <p>installed.</p>
+  <h3>Enjoy Your Project Management System</h3>
+</div>
+

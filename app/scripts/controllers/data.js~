@@ -1,0 +1,9 @@
+'use strict';
+
+angular.module('timWhitneyApp')
+  .controller('DataCtrl', function ($scope) {
+
+    $scope.enterData = function() {
+      alert('<h1>Data Entered</h1>');
+    }
+  });

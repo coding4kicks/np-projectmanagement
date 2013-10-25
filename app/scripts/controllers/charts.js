@@ -17,12 +17,31 @@ angular.module('timWhitneyApp')
                               {'label': 'Latin', 'value': 25 },
                               {'label': 'Asian', 'value': 10 },
                               {'label': 'Other', 'value': 5 }]
-                    };
+                    },
+        lineData = {'element': 'hero-graph',
+                    'data': [
+          {"period": "2013-01", "initiated": 200, "ineligible": 60, "notInitiated": 125},
+          {"period": "2013-02", "initiated": 351, "ineligible": 29, "notInitiated": 111},
+          {"period": "2013-03", "initiated": 469, "ineligible": 18, "notInitiated": 250},
+          {"period": "2013-04", "initiated": 246, "ineligible": 61, "notInitiated": 155},
+          {"period": "2013-05", "initiated": 171, "ineligible": 76, "notInitiated": 135},
+          {"period": "2013-06", "initiated": 155, "ineligible": 81, "notInitiated": 189},
+          {"period": "2013-07", "initiated": 226, "ineligible": 20, "notInitiated": 89},
+          {"period": "2013-08", "initiated": 245, "ineligible": 50, "notInitiated": 145},
+          {"period": "2013-09", "initiated": 171, "ineligible": 76, "notInitiated": 80},
+          {"period": "2013-10", "initiated": 155, "ineligible": 81, "notInitiated": 99},
+          {"period": "2013-11", "initiated": 226, "ineligible": 20, "notInitiated": 110},
+          {"period": "2013-12", "initiated": 245, "ineligible": 50, "notInitiated": 100}],
+                    'xkey': 'period',
+                    'xLabels': 'month',
+                    'ykeys': ['initiated', 'ineligible', 'notInitiated'],
+                    'labels': ['Initiated', 'Ineligible', 'Not Initiated']
+                   };
 
     
     initBarChart($window, barData);
     initDonutChart($window, donutData);
-    initLineChart($window);
+    initLineChart($window, lineData);
     initAreaChart($window);
 
     function initBarChart($window, barData) {
@@ -43,14 +62,6 @@ angular.module('timWhitneyApp')
     function initDonutChart($window, donutData) {
       // Morris Donut Chart
       Morris.Donut({
-        //element: 'hero-donut',
-        //data: [
-        //    {label: 'African American', value: 25 },
-        //    {label: 'Caucasian', value: 35 },
-        //    {label: 'Latin', value: 25 },
-        //    {label: 'Asian', value: 10 },
-        //    {label: 'Other', value: 5 }
-        //],
         element: donutData.element,
         data: donutData.data,
         colors: ["#30a1ec", "#76bdee", "#c4dafe"],
@@ -58,29 +69,15 @@ angular.module('timWhitneyApp')
       });
     };
 
-    function initLineChart($window) {
+    function initLineChart($window, lineData) {
       // Morris Line Chart
-      var tax_data = [
-          {"period": "2013-01", "initiated": 200, "ineligible": 60, "notInitiated": 125},
-          {"period": "2013-02", "initiated": 351, "ineligible": 29, "notInitiated": 111},
-          {"period": "2013-03", "initiated": 469, "ineligible": 18, "notInitiated": 250},
-          {"period": "2013-04", "initiated": 246, "ineligible": 61, "notInitiated": 155},
-          {"period": "2013-05", "initiated": 171, "ineligible": 76, "notInitiated": 135},
-          {"period": "2013-06", "initiated": 155, "ineligible": 81, "notInitiated": 189},
-          {"period": "2013-07", "initiated": 226, "ineligible": 20, "notInitiated": 89},
-          {"period": "2013-08", "initiated": 245, "ineligible": 50, "notInitiated": 145},
-          {"period": "2013-09", "initiated": 171, "ineligible": 76, "notInitiated": 80},
-          {"period": "2013-10", "initiated": 155, "ineligible": 81, "notInitiated": 99},
-          {"period": "2013-11", "initiated": 226, "ineligible": 20, "notInitiated": 110},
-          {"period": "2013-12", "initiated": 245, "ineligible": 50, "notInitiated": 100}
-      ];
       Morris.Line({
-          element: 'hero-graph',
-          data: tax_data,
-          xkey: 'period',
-          xLabels: "month",
-          ykeys: ['initiated', 'ineligible', 'notInitiated'],
-          labels: ['Initiated', 'Ineligible', 'Not Initiated']
+        element: lineData.element,
+        data: lineData.data,
+        xkey: lineData.xkey,
+        xLabels: lineData.xLabels,
+        ykeys: lineData.ykeys,
+        labels: lineData.labels
       });
     };
 

@@ -9,10 +9,19 @@ angular.module('timWhitneyApp')
                    'xkey': 'gender',
                    'ykeys': ['total'],
                    'labels': ['Total']
-                  };
+                  },
+
+        donutData = {'element': 'hero-donut',
+                     'data': [{'label': 'African American', 'value': 25 },
+                              {'label': 'Caucasian', 'value': 35 },
+                              {'label': 'Latin', 'value': 25 },
+                              {'label': 'Asian', 'value': 10 },
+                              {'label': 'Other', 'value': 5 }]
+                    };
+
     
     initBarChart($window, barData);
-    initDonutChart($window);
+    initDonutChart($window, donutData);
     initLineChart($window);
     initAreaChart($window);
 
@@ -31,19 +40,21 @@ angular.module('timWhitneyApp')
       });
     };
 
-    function initDonutChart($window) {
+    function initDonutChart($window, donutData) {
       // Morris Donut Chart
       Morris.Donut({
-          element: 'hero-donut',
-          data: [
-              {label: 'African American', value: 25 },
-              {label: 'Caucasian', value: 35 },
-              {label: 'Latin', value: 25 },
-              {label: 'Asian', value: 10 },
-              {label: 'Other', value: 5 }
-          ],
-          colors: ["#30a1ec", "#76bdee", "#c4dafe"],
-          formatter: function (y) { return y + "%" }
+        //element: 'hero-donut',
+        //data: [
+        //    {label: 'African American', value: 25 },
+        //    {label: 'Caucasian', value: 35 },
+        //    {label: 'Latin', value: 25 },
+        //    {label: 'Asian', value: 10 },
+        //    {label: 'Other', value: 5 }
+        //],
+        element: donutData.element,
+        data: donutData.data,
+        colors: ["#30a1ec", "#76bdee", "#c4dafe"],
+        formatter: function (y) { return y + "%" }
       });
     };
 

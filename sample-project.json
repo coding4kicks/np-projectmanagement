@@ -1,0 +1,45 @@
+{
+  'project': {
+
+    'totals': {
+
+      'gender': {'male': 35, 'female': 70}, 
+
+      'ethnicity': {'african': 50,
+                    'caucasion': 80,
+                    'latin': 40,
+                    'asian': 10,
+                    'other': 5} 
+    },
+
+    'careActions': {
+      '2013-01': {'initiated': 200, 'ineligible': 60, 'notInitiated': 125},
+      '2013-02': {'initiated': 351, 'ineligible': 29, 'notInitiated': 111},
+      '2013-03': {'initiated': 469, 'ineligible': 18, 'notInitiated': 250},
+      '2013-04': {'initiated': 246, 'ineligible': 61, 'notInitiated': 155},
+      '2013-05': {'initiated': 171, 'ineligible': 76, 'notInitiated': 135},
+      '2013-06': {'initiated': 155, 'ineligible': 81, 'notInitiated': 189},
+      '2013-07': {'initiated': 226, 'ineligible': 20, 'notInitiated': 89},
+      '2013-08': {'initiated': 245, 'ineligible': 50, 'notInitiated': 145},
+      '2013-09': {'initiated': 171, 'ineligible': 76, 'notInitiated': 80},
+      '2013-10': {'initiated': 155, 'ineligible': 81, 'notInitiated': 99},
+      '2013-11': {'initiated': 226, 'ineligible': 20, 'notInitiated': 110},
+      '2013-12': {'initiated': 245, 'ineligible': 50, 'notInitiated': 100}    
+    },
+
+    'screeningActions': {
+      '2013-01': {'info': 150, 'phone': 99, 'referral': 47},
+      '2013-02': {'info': 160, 'phone': 110, 'referral': 41},
+      '2013-03': {'info': 180, 'phone': 120, 'referral': 31},
+      '2013-04': {'info': 213, 'phone': 110, 'referral': 89},
+      '2013-05': {'info': 112, 'phone': 85, 'referral': 93},
+      '2013-06': {'info': 230, 'phone': 180, 'referral': 81},
+      '2013-07': {'info': 300, 'phone': 190, 'referral': 88},
+      '2013-08': {'info': 100, 'phone': 80, 'referral': 75},
+      '2013-09': {'info': 70, 'phone': 45, 'referral': 58},
+      '2013-10': {'info': 154, 'phone': 76, 'referral': 91},
+      '2013-11': {'info': 200, 'phone': 88, 'referral': 79},
+      '2013-12': {'info': 250, 'phone': 110, 'referral': 11}
+    }
+  }
+}

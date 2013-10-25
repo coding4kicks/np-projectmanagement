@@ -36,13 +36,33 @@ angular.module('timWhitneyApp')
                     'xLabels': 'month',
                     'ykeys': ['initiated', 'ineligible', 'notInitiated'],
                     'labels': ['Initiated', 'Ineligible', 'Not Initiated']
-                   };
+                   },
+
+        areaData = {'element': 'hero-area',
+                    'data': [
+              {'period': '2013-01', 'info': 150, 'phone': 99, 'referral': 47},
+              {'period': '2013-02', 'info': 160, 'phone': 110, 'referral': 41},
+              {'period': '2013-03', 'info': 180, 'phone': 120, 'referral': 31},
+              {'period': '2013-04', 'info': 213, 'phone': 110, 'referral': 89},
+              {'period': '2013-05', 'info': 112, 'phone': 85, 'referral': 93},
+              {'period': '2013-06', 'info': 230, 'phone': 180, 'referral': 81},
+              {'period': '2013-07', 'info': 300, 'phone': 190, 'referral': 88},
+              {'period': '2013-08', 'info': 100, 'phone': 80, 'referral': 75},
+              {'period': '2013-09', 'info': 70, 'phone': 45, 'referral': 58},
+              {'period': '2013-010', 'info': 154, 'phone': 76, 'referral': 91},
+              {'period': '2013-011', 'info': 200, 'phone': 88, 'referral': 79},
+              {'period': '2013-012', 'info': 250, 'phone': 110, 'referral': 11}],
+                    'xkey': 'period',
+                    'ykeys': ['info', 'phone', 'referral'],
+                    'labels': ['Info', 'Phone', 'Referral'],
+
+        };
 
     
     initBarChart($window, barData);
     initDonutChart($window, donutData);
     initLineChart($window, lineData);
-    initAreaChart($window);
+    initAreaChart($window, areaData);
 
     function initBarChart($window, barData) {
       // Morris Bar Chart
@@ -81,30 +101,35 @@ angular.module('timWhitneyApp')
       });
     };
 
-    function initAreaChart($window) {
+    function initAreaChart($window, areaData) {
       // Morris Area Chart
       $window.Morris.Area({
-          element: 'hero-area',
-          data: [
-              {period: '2013-01', info: 150, phone: 99, referral: 47},
-              {period: '2013-02', info: 160, phone: 110, referral: 41},
-              {period: '2013-03', info: 180, phone: 120, referral: 31},
-              {period: '2013-04', info: 213, phone: 110, referral: 89},
-              {period: '2013-05', info: 112, phone: 85, referral: 93},
-              {period: '2013-06', info: 230, phone: 180, referral: 81},
-              {period: '2013-07', info: 300, phone: 190, referral: 88},
-              {period: '2013-08', info: 100, phone: 80, referral: 75},
-              {period: '2013-09', info: 70, phone: 45, referral: 58},
-              {period: '2013-010', info: 154, phone: 76, referral: 91},
-              {period: '2013-011', info: 200, phone: 88, referral: 79},
-              {period: '2013-012', info: 250, phone: 110, referral: 11}
-          ],
-          xkey: 'period',
-          ykeys: ['info', 'phone', 'referral'],
-          labels: ['Info', 'Phone', 'Referral'],
-          lineWidth: 2,
-          hideHover: 'auto',
-          lineColors: ["#81d5d9", "#a6e182", "#67bdf8"]
+          //element: 'hero-area',
+          //data: [
+          //    {period: '2013-01', info: 150, phone: 99, referral: 47},
+          //    {period: '2013-02', info: 160, phone: 110, referral: 41},
+          //    {period: '2013-03', info: 180, phone: 120, referral: 31},
+          //    {period: '2013-04', info: 213, phone: 110, referral: 89},
+          //    {period: '2013-05', info: 112, phone: 85, referral: 93},
+          //    {period: '2013-06', info: 230, phone: 180, referral: 81},
+          //    {period: '2013-07', info: 300, phone: 190, referral: 88},
+          //    {period: '2013-08', info: 100, phone: 80, referral: 75},
+          //    {period: '2013-09', info: 70, phone: 45, referral: 58},
+          //    {period: '2013-010', info: 154, phone: 76, referral: 91},
+          //    {period: '2013-011', info: 200, phone: 88, referral: 79},
+          //    {period: '2013-012', info: 250, phone: 110, referral: 11}
+          //],
+          //xkey: 'period',
+          //ykeys: ['info', 'phone', 'referral'],
+          //labels: ['Info', 'Phone', 'Referral'],
+        element: areaData.element,
+        data: areaData.data,
+        xkey: areaData.xkey,
+        ykeys: areaData.ykeys,
+        labels: areaData.labels,
+        lineWidth: 2,
+        hideHover: 'auto',
+        lineColors: ["#81d5d9", "#a6e182", "#67bdf8"]
         });
     };
   });

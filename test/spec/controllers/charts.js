@@ -11,6 +11,11 @@ describe('Controller: ChartsCtrl', function () {
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope, $window) {
     scope = $rootScope.$new();
+    $window.Morris = {};
+    $window.Morris.Bar = jasmine.createSpy('Bar');
+    $window.Morris.Donut = jasmine.createSpy('Donut');
+    $window.Morris.Line = jasmine.createSpy('Line');
+    $window.Morris.Area = jasmine.createSpy('Area');
     ChartsCtrl = $controller('ChartsCtrl', {
       $scope: scope
     });

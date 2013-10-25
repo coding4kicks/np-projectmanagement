@@ -12,6 +12,7 @@ describe('Controller: ChartsCtrl', function () {
   beforeEach(inject(function ($controller, $rootScope, $window) {
     scope = $rootScope.$new();
     $window.Morris = {};
+    $window.Morris.Bar = jasmine.createSpy('Bar');
     ChartsCtrl = $controller('ChartsCtrl', {
       $scope: scope
     });

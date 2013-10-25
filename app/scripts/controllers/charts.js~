@@ -5,6 +5,9 @@ angular.module('timWhitneyApp')
 
     
     initBarChart($window);
+    //initDonutChart($window);
+    //initLineChart($window);
+    //initAreaChart($window);
 
     function initBarChart($window) {
       // Morris Bar Chart

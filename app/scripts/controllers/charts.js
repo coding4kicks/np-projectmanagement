@@ -3,27 +3,31 @@
 angular.module('timWhitneyApp')
   .controller('ChartsCtrl', function ($scope, $window) {
 
+    var barData = {'element': 'hero-bar',
+                   'data': [{'gender': 'Male', 'total': 1236},
+                            {'gender': 'Female', 'total': 1537}],
+                   'xkey': 'gender',
+                   'ykeys': ['total'],
+                   'labels': ['Total']
+                  };
     
-    initBarChart($window);
+    initBarChart($window, barData);
     initDonutChart($window);
     initLineChart($window);
     initAreaChart($window);
 
-    function initBarChart($window) {
+    function initBarChart($window, barData) {
       // Morris Bar Chart
       Morris.Bar({
-          element: 'hero-bar',
-          data: [
-              {gender: 'Male', total: 1236},
-              {gender: 'Female', total: 1537}
-              ],
-          xkey: 'gender',
-          ykeys: ['total'],
-          labels: ['Total'],
-          barRatio: 0.4,
-          xLabelMargin: 10,
-          hideHover: 'auto',
-          barColors: ["#3d88ba"]
+        element: barData.element,
+        data: barData.data,
+        xkey: barData.xkey,
+        ykeys: barData.ykeys,
+        labels: barData.labels,
+        barRatio: 0.4,
+        xLabelMargin: 10,
+        hideHover: 'auto',
+        barColors: ["#3d88ba"]
       });
     };
 

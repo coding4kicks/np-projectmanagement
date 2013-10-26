@@ -1,69 +1,89 @@
 'use strict';
 
 angular.module('timWhitneyApp')
-  .controller('ChartsCtrl', function ($scope, $window) {
+  .controller('ChartsCtrl', function ($scope, $window, angularFire) {
 
-    var barData = {'element': 'hero-bar',
-                   'data': [{'gender': 'Male', 'total': 1236},
-                            {'gender': 'Female', 'total': 1537}],
-                   'xkey': 'gender',
-                   'ykeys': ['total'],
-                   'labels': ['Total']
-                  },
+    $scope.project = {};
+    var ref = new Firebase('https://np-projectmanagement.firebaseIO.com/project');
+    angularFire(ref, $scope, 'project', {})
+      .then(function(){
 
-        donutData = {'element': 'hero-donut',
-                     'data': [{'label': 'African American', 'value': 25 },
-                              {'label': 'Caucasian', 'value': 35 },
-                              {'label': 'Latin', 'value': 25 },
-                              {'label': 'Asian', 'value': 10 },
-                              {'label': 'Other', 'value': 5 }]
-                    },
+        var careActions = [];
+        var screeningActions = [];
 
-        lineData = {'element': 'hero-graph',
-                    'data': [
-          {"period": "2013-01", "initiated": 200, "ineligible": 60, "notInitiated": 125},
-          {"period": "2013-02", "initiated": 351, "ineligible": 29, "notInitiated": 111},
-          {"period": "2013-03", "initiated": 469, "ineligible": 18, "notInitiated": 250},
-          {"period": "2013-04", "initiated": 246, "ineligible": 61, "notInitiated": 155},
-          {"period": "2013-05", "initiated": 171, "ineligible": 76, "notInitiated": 135},
-          {"period": "2013-06", "initiated": 155, "ineligible": 81, "notInitiated": 189},
-          {"period": "2013-07", "initiated": 226, "ineligible": 20, "notInitiated": 89},
-          {"period": "2013-08", "initiated": 245, "ineligible": 50, "notInitiated": 145},
-          {"period": "2013-09", "initiated": 171, "ineligible": 76, "notInitiated": 80},
-          {"period": "2013-10", "initiated": 155, "ineligible": 81, "notInitiated": 99},
-          {"period": "2013-11", "initiated": 226, "ineligible": 20, "notInitiated": 110},
-          {"period": "2013-12", "initiated": 245, "ineligible": 50, "notInitiated": 100}],
-                    'xkey': 'period',
-                    'xLabels': 'month',
-                    'ykeys': ['initiated', 'ineligible', 'notInitiated'],
-                    'labels': ['Initiated', 'Ineligible', 'Not Initiated']
-                   },
+        for(var month in $scope.project.careActions) {
+          var data = {};
+          data.period = month;
+          data.initiated = $scope.project.careActions[month].initiated;
+          data.ineligible = $scope.project.careActions[month].ineligible;
+          data.notInitiated = $scope.project.careActions[month].notInitiated;
+          careActions.push(data);
+        }
 
-        areaData = {'element': 'hero-area',
-                    'data': [
-              {'period': '2013-01', 'info': 150, 'phone': 99, 'referral': 47},
-              {'period': '2013-02', 'info': 160, 'phone': 110, 'referral': 41},
-              {'period': '2013-03', 'info': 180, 'phone': 120, 'referral': 31},
-              {'period': '2013-04', 'info': 213, 'phone': 110, 'referral': 89},
-              {'period': '2013-05', 'info': 112, 'phone': 85, 'referral': 93},
-              {'period': '2013-06', 'info': 230, 'phone': 180, 'referral': 81},
-              {'period': '2013-07', 'info': 300, 'phone': 190, 'referral': 88},
-              {'period': '2013-08', 'info': 100, 'phone': 80, 'referral': 75},
-              {'period': '2013-09', 'info': 70, 'phone': 45, 'referral': 58},
-              {'period': '2013-10', 'info': 154, 'phone': 76, 'referral': 91},
-              {'period': '2013-11', 'info': 200, 'phone': 88, 'referral': 79},
-              {'period': '2013-12', 'info': 250, 'phone': 110, 'referral': 11}],
-                    'xkey': 'period',
-                    'ykeys': ['info', 'phone', 'referral'],
-                    'labels': ['Info', 'Phone', 'Referral'],
+        for(var month in $scope.project.screeningActions) {
+          var data = {};
+          data.period = month;
+          data.info = $scope.project.screeningActions[month].info;
+          data.phone = $scope.project.screeningActions[month].phone;
+          data.referral = $scope.project.screeningActions[month].referral;
+          screeningActions.push(data);
+        }
 
-        };
+        var barData = {
+              'element': 'hero-bar',
+              'data': [{'gender': 'Male', 'total': $scope.project.totals.gender.male},
+                       {'gender': 'Female', 'total': $scope.project.totals.gender.female}],
+              'xkey': 'gender',
+              'ykeys': ['total'],
+              'labels': ['Total']
+            },
 
-    
-    initBarChart($window, barData);
-    initDonutChart($window, donutData);
-    initLineChart($window, lineData);
-    initAreaChart($window, areaData);
+            donutData = {
+              'element': 'hero-donut',
+              'data': [{'label': 'African American', 'value': $scope.project.totals.ethnicity.african},
+                       {'label': 'Caucasian', 'value': $scope.project.totals.ethnicity.caucasion},
+                       {'label': 'Latin', 'value': $scope.project.totals.ethnicity.latin},
+                       {'label': 'Asian', 'value': $scope.project.totals.ethnicity.asian},
+                       {'label': 'Other', 'value': $scope.project.totals.ethnicity.other}]
+              },
+
+            lineData = {
+              'element': 'hero-graph',
+              'data': careActions,
+              'xkey': 'period',
+              'xLabels': 'month',
+              'ykeys': ['initiated', 'ineligible', 'notInitiated'],
+              'labels': ['Initiated', 'Ineligible', 'Not Initiated']
+              },
+
+            areaData = {
+              'element': 'hero-area',
+              'data': screeningActions,
+              //'data': [
+              //    {'period': '2013-01', 'info': 150, 'phone': 99, 'referral': 47},
+              //    {'period': '2013-02', 'info': 160, 'phone': 110, 'referral': 41},
+              //    {'period': '2013-03', 'info': 180, 'phone': 120, 'referral': 31},
+              //    {'period': '2013-04', 'info': 213, 'phone': 110, 'referral': 89},
+              //    {'period': '2013-05', 'info': 112, 'phone': 85, 'referral': 93},
+              //    {'period': '2013-06', 'info': 230, 'phone': 180, 'referral': 81},
+              //    {'period': '2013-07', 'info': 300, 'phone': 190, 'referral': 88},
+              //    {'period': '2013-08', 'info': 100, 'phone': 80, 'referral': 75},
+              //    {'period': '2013-09', 'info': 70, 'phone': 45, 'referral': 58},
+              //    {'period': '2013-10', 'info': 154, 'phone': 76, 'referral': 91},
+              //    {'period': '2013-11', 'info': 200, 'phone': 88, 'referral': 79},
+              //    {'period': '2013-12', 'info': 250, 'phone': 110, 'referral': 11}],
+              'xkey': 'period',
+              'ykeys': ['info', 'phone', 'referral'],
+              'labels': ['Info', 'Phone', 'Referral'],
+
+            };
+       
+        initBarChart($window, barData);
+        initDonutChart($window, donutData);
+        initLineChart($window, lineData);
+        initAreaChart($window, areaData);
+
+      });
 
     function initBarChart($window, barData) {
       // Morris Bar Chart

@@ -31,7 +31,11 @@ angular.module('timWhitneyApp', [])
     $scope.navState.charts = '';
     $scope.navState.data = '';
 
-    $scope.activate = function(data){
-      alert(data);};
+    $scope.activate = function(navItem){
+      for(var item in $scope.navState) {
+        $scope.navState[item] = '';
+      }
+      $scope.navState[navItem] = 'active';
+    };
 
   });

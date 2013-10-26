@@ -11,6 +11,8 @@ files = [
   'app/js/morris.min.js',
   'app/components/angular/angular.js',
   'app/components/angular-mocks/angular-mocks.js',
+  'app/components/firebase.js',
+  'app/components/angularFire.js',
   'app/scripts/*.js',
   'app/scripts/**/*.js',
   'test/mock/**/*.js',

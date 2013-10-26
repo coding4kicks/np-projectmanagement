@@ -16,21 +16,21 @@
         <div class="field-box">
           <label>Last Name:</label>
           <div class="col-md-6">
-            <input class="form-control" type="text" />
+            <input class="form-control" type="text" ng-model="lastName" />
           </div>                            
         </div>
 
         <div class="field-box">
           <label>First Name:</label>
           <div class="col-md-6">
-            <input class="form-control" type="text" />
+            <input class="form-control" type="text" ng-model="firstName" />
           </div>                            
         </div>
 
         <div class="field-box">
           <label>Date of Birth:</label>
           <div class="col-md-6">
-            <input class="form-control" type="text" />
+            <input class="form-control" type="text" ng-model="dateOfBirth" />
           </div>                            
         </div>
 
@@ -38,11 +38,11 @@
           <label>Gender:</label>
           <div class="col-md-6">
             <label class="radio-inline" style="width: 80px; padding-left: 10px;">
-              <input type="radio" name="genderRadios" id="genderRadios1" value="male">
+              <input type="radio" name="genderRadios" id="genderRadios1" value="male" ng-model="gender">
               Male
             </label>
             <label class="radio-inline" style="width: 90px;">
-              <input type="radio" name="genderRadios" id="genderRadios2" value="female">
+              <input type="radio" name="genderRadios" id="genderRadios2" value="female" ng-model="gender">
               Female
             </label>
           </div>                                
@@ -52,23 +52,23 @@
           <label>Race:</label>
           <div class="col-md-6">
             <label class="radio-inline" style="width: 50px; padding-left: 10px;">
-              <input type="radio" name="raceRadios" id="raceRadios1" value="aa">
+              <input type="radio" name="raceRadios" id="raceRadios1" value="aa" ng-model="ethnicity">
               AA
             </label>
             <label class="radio-inline" style="width: 50px; padding-left: 10px;">
-              <input type="radio" name="raceRadios" id="raceRadios2" value="c">
+              <input type="radio" name="raceRadios" id="raceRadios2" value="c" ng-model="ethnicity">
               C
             </label>
             <label class="radio-inline" style="width: 50px;  padding-left: 10px;">
-              <input type="radio" name="raceRadios" id="raceRadios1" value="l">
+              <input type="radio" name="raceRadios" id="raceRadios1" value="l" ng-model="ethnicity">
               L
             </label>
             <label class="radio-inline" style="width: 50px; padding: 5px 0 0 10px; margin-left: 0;">
-              <input type="radio" name="raceRadios" id="raceRadios2" value="a">
+              <input type="radio" name="raceRadios" id="raceRadios2" value="a" ng-model="ethnicity">
               A
             </label>
             <label class="radio-inline" style="width: 80px; padding: 5px 0 0 10px;">
-              <input type="radio" name="raceRadios" id="raceRadios2" value="other">
+              <input type="radio" name="raceRadios" id="raceRadios2" value="other" ng-model="ethnicity">
               Other
             </label>
           </div>                                
@@ -84,11 +84,11 @@
           <label>Unstably Housed:</label>
           <div class="col-md-6">
             <label class="radio-inline" style="width: 80px;">
-              <input type="radio" name="housedRadios" id="housedRadios1" value="yes">
+              <input type="radio" name="housedRadios" id="housedRadios1" value="yes" ng-model="unstablyHoused">
               Yes
             </label>
             <label class="radio-inline" style="width: 80px;">
-              <input type="radio" name="housedRadios" id="housedRadios2" value="no" checked>
+              <input type="radio" name="housedRadios" id="housedRadios2" value="no" checked ng-model="unstablyHoused">
               No
             </label>
           </div>                                
@@ -98,11 +98,11 @@
           <label>Limited English:</label>
           <div class="col-md-6">
             <label class="radio-inline" style="width: 80px;">
-              <input type="radio" name="englishRadios" id="englishRadios1" value="yes">
+              <input type="radio" name="englishRadios" id="englishRadios1" value="yes" ng-model="limitedEnglish">
               Yes
             </label>
             <label class="radio-inline" style="width: 80px;">
-              <input type="radio" name="englishRadios" id="englishRadios2" value="no" checked>
+              <input type="radio" name="englishRadios" id="englishRadios2" value="no" ng-model="limitedEnglish" checked>
               No
             </label>
           </div>                                
@@ -111,21 +111,21 @@
         <div class="field-box">
           <label>Time in Minutes:<br>(number only)</label>
           <div class="col-md-6">
-            <input class="form-control" style="width: 80px;" type="text" />
+            <input class="form-control" style="width: 80px;" type="text" ng-model="minutes" />
           </div>                            
         </div>
 
         <div class="field-box">
           <label>Staff Name:</label>
           <div class="col-md-6">
-            <input class="form-control" type="text" />
+            <input class="form-control" type="text" ng-mode="staffName" />
           </div>                            
         </div>
 
         <div class="field-box">
           <label>Date:</label>
           <div class="col-md-6">
-            <input type="text" value="03/29/2013" class="form-control input-datepicker" />
+            <input type="text" value="03/29/2013" class="form-control input-datepicker" ng-mode="date"/>
           </div>
         </div>
 
@@ -138,15 +138,15 @@
 
         <div class="field-box">
           <label class="checkbox" style="width: 100%;">
-            <input type="checkbox" id="statusCheckbox1" value="info"> Client given educational information
+            <input type="checkbox" id="statusCheckbox1" value="info" ng-model="ccInfo"> Client given educational information
           </label>
           <label class="checkbox" style="width: 100%;">
-            <input type="checkbox" id="statusCheckbox2" value="phone"> Phone call made with client
+            <input type="checkbox" id="statusCheckbox2" value="phone" ng-model="ccPhone"> Phone call made with client
           </label>
           <label class="checkbox" style="width: 100%;">
-            <input type="checkbox" id="statusCheckbox3" value="referral"> Client referred to service provider
+            <input type="checkbox" id="statusCheckbox3" value="referral" ng-model="ccReferral"> Client referred to service provider
           </label>
-            <label style="margin-left: 48px; font-weight: normal; width: 110px; color: #555555;">Name of Provider:</label>
+            <label style="margin-left: 48px; font-weight: normal; width: 110px; color: #555555;" ng-model="provider">Name of Provider:</label>
             <div class="col-md-6">
               <input class="form-control" type="text" />
             </div>                            
@@ -161,15 +161,15 @@
 
         <div class="field-box">
           <label class="radio" style="padding-left: 40px;">
-            <input type="radio" name="statusRadios" id="statusRadios1" value="initiated">
+            <input type="radio" name="statusRadios" id="statusRadios1" value="initiated" ng-model="status">
              Application Initiated
           </label>
           <label class="radio" style="padding-left: 40px;">
-            <input type="radio" name="statusRadios" id="statusRadios2" value="ineligible">
+            <input type="radio" name="statusRadios" id="statusRadios2" value="ineligible" ng-model="status">
              Application Not Initiated Ineligible
           </label>
           <label class="radio" style="padding-left: 40px;">
-            <input type="radio" name="statusRadios" id="statusRadios3" value="notInitiated">
+            <input type="radio" name="statusRadios" id="statusRadios3" value="notInitiated" ng-model="status">
              Application Not Initiated Client Elibible
           </label>                  
         </div>

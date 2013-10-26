@@ -16,33 +16,33 @@
         <div class="field-box">
           <label>Last Name:</label>
           <div class="col-md-6">
-            <input class="form-control" type="text" />
+            <input class="form-control" type="text" ng-model="lastName" />
           </div>                            
         </div>
 
         <div class="field-box">
           <label>First Name:</label>
           <div class="col-md-6">
-            <input class="form-control" type="text" />
+            <input class="form-control" type="text" ng-model="firstName" />
           </div>                            
         </div>
 
         <div class="field-box">
           <label>Date of Birth:</label>
           <div class="col-md-6">
-            <input class="form-control" type="text" />
+            <input class="form-control" type="text" ng-model="dateOfBirth" />
           </div>                            
         </div>
 
         <div class="field-box">
           <label>Gender:</label>
           <div class="col-md-6">
-            <label class="radio-inline" style="width: 80px;">
-              <input type="radio" name="genderRadios" id="genderRadios1" value="male">
+            <label class="radio-inline" style="width: 80px; padding-left: 10px;">
+              <input type="radio" name="genderRadios" id="genderRadios1" value="male" ng-model="gender">
               Male
             </label>
             <label class="radio-inline" style="width: 90px;">
-              <input type="radio" name="genderRadios" id="genderRadios2" value="female">
+              <input type="radio" name="genderRadios" id="genderRadios2" value="female" ng-model="gender">
               Female
             </label>
           </div>                                

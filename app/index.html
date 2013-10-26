@@ -289,7 +289,7 @@
 
     <!-- firebase -->
     <script src="https://cdn.firebase.com/v0/firebase.js"></script>
-    <script src="https://cdn.firebase.com/libs/angularfire/0.3.0/angularfire.js"></script>
+    <script>window.firebase || document.write('<script src="components/firebase.js"><\/script>')</script>
 
     <!-- knob -->
     <script src="js/jquery.knob.js"></script>
@@ -306,6 +306,8 @@
     <script src="components/angular/angular.js"></script>
     <script src="components/angular-cookies/angular-cookies.js"></script>
     <script src="components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/0.3.0/angularfire.js"></script>
+    <script>window.angularFire || document.write('<script src="components/angularFire.js"><\/script>')</script>
 
     <!-- build:js scripts/scripts.js -->
     <script src="scripts/app.js"></script>

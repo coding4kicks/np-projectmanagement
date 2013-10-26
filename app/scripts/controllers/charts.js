@@ -59,19 +59,6 @@ angular.module('timWhitneyApp')
             areaData = {
               'element': 'hero-area',
               'data': screeningActions,
-              //'data': [
-              //    {'period': '2013-01', 'info': 150, 'phone': 99, 'referral': 47},
-              //    {'period': '2013-02', 'info': 160, 'phone': 110, 'referral': 41},
-              //    {'period': '2013-03', 'info': 180, 'phone': 120, 'referral': 31},
-              //    {'period': '2013-04', 'info': 213, 'phone': 110, 'referral': 89},
-              //    {'period': '2013-05', 'info': 112, 'phone': 85, 'referral': 93},
-              //    {'period': '2013-06', 'info': 230, 'phone': 180, 'referral': 81},
-              //    {'period': '2013-07', 'info': 300, 'phone': 190, 'referral': 88},
-              //    {'period': '2013-08', 'info': 100, 'phone': 80, 'referral': 75},
-              //    {'period': '2013-09', 'info': 70, 'phone': 45, 'referral': 58},
-              //    {'period': '2013-10', 'info': 154, 'phone': 76, 'referral': 91},
-              //    {'period': '2013-11', 'info': 200, 'phone': 88, 'referral': 79},
-              //    {'period': '2013-12', 'info': 250, 'phone': 110, 'referral': 11}],
               'xkey': 'period',
               'ykeys': ['info', 'phone', 'referral'],
               'labels': ['Info', 'Phone', 'Referral'],
@@ -125,24 +112,6 @@ angular.module('timWhitneyApp')
     function initAreaChart($window, areaData) {
       // Morris Area Chart
       $window.Morris.Area({
-          //element: 'hero-area',
-          //data: [
-          //    {period: '2013-01', info: 150, phone: 99, referral: 47},
-          //    {period: '2013-02', info: 160, phone: 110, referral: 41},
-          //    {period: '2013-03', info: 180, phone: 120, referral: 31},
-          //    {period: '2013-04', info: 213, phone: 110, referral: 89},
-          //    {period: '2013-05', info: 112, phone: 85, referral: 93},
-          //    {period: '2013-06', info: 230, phone: 180, referral: 81},
-          //    {period: '2013-07', info: 300, phone: 190, referral: 88},
-          //    {period: '2013-08', info: 100, phone: 80, referral: 75},
-          //    {period: '2013-09', info: 70, phone: 45, referral: 58},
-          //    {period: '2013-010', info: 154, phone: 76, referral: 91},
-          //    {period: '2013-011', info: 200, phone: 88, referral: 79},
-          //    {period: '2013-012', info: 250, phone: 110, referral: 11}
-          //],
-          //xkey: 'period',
-          //ykeys: ['info', 'phone', 'referral'],
-          //labels: ['Info', 'Phone', 'Referral'],
         element: areaData.element,
         data: areaData.data,
         xkey: areaData.xkey,

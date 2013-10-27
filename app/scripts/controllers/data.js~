@@ -4,6 +4,20 @@ angular.module('timWhitneyApp')
   .controller('DataCtrl', function ($scope) {
 
     $scope.enterData = function() {
+      var entry = {},
+          date = $scope.datepicker && $scope.datepicker.date,
+          // Set the month to a 01-12 or null if undefined
+          month = (date && date.getMonth() && '0' + date.getMonth()) || null,
+          year = (date && date.getFullYear()) || null,
+          dateKey = null;
+
+     // If valid date construct the date key
+      if(month && year) {
+        month = month.slice(-2) // Remove zero from last 3 months: 010, 011, 012
+        dateKey = year + '-' + month;
+      }; 
+      console.log(dateKey);
+
       console.log($scope.firstName);
       console.log($scope.lastName);
       console.log($scope.dateOfBirth);
@@ -13,7 +27,6 @@ angular.module('timWhitneyApp')
       console.log($scope.limitedEnglish);
       console.log($scope.minutes);
       console.log($scope.staffName);
-      console.log($scope.date);
       console.log($scope.ccInfo);
       console.log($scope.ccPhone);
       console.log($scope.ccReferral);

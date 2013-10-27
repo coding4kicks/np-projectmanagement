@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('timWhitneyApp')
-  .controller('DataCtrl', function ($scope) {
+  .controller('DataCtrl', function ($scope, angularFire) {
 
     $scope.enterData = function() {
       var entry = {},
@@ -16,8 +16,8 @@ angular.module('timWhitneyApp')
         month = month.slice(-2) // Remove zero from last 3 months: 010, 011, 012
         dateKey = year + '-' + month;
       }; 
-      console.log(dateKey);
 
+      console.log(dateKey);
       console.log($scope.firstName);
       console.log($scope.lastName);
       console.log($scope.dateOfBirth);

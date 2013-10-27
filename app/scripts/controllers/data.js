@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('timWhitneyApp')
-  .controller('DataCtrl', function ($scope) {
+  .controller('DataCtrl', function ($scope, angularFire) {
 
     $scope.enterData = function() {
       var entry = {},
@@ -33,7 +33,11 @@ angular.module('timWhitneyApp')
       console.log($scope.provider);
       console.log($scope.status);
 
-
-      alert('Data Entered');
+      $scope.project = {};
+      var ref = new Firebase('https://np-projectmanagement.firebaseIO.com/project');
+      angularFire(ref, $scope, 'project', {})
+        .then(function(){
+          alert('Data Entered');
+        });
     }
   });

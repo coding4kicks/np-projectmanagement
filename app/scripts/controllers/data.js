@@ -17,26 +17,31 @@ angular.module('timWhitneyApp')
         dateKey = year + '-' + month;
       }; 
 
-      console.log(dateKey);
-      console.log($scope.firstName);
-      console.log($scope.lastName);
-      console.log($scope.dateOfBirth);
-      console.log($scope.gender);
-      console.log($scope.race);
-      console.log($scope.unstablyHoused);
-      console.log($scope.limitedEnglish);
-      console.log($scope.minutes);
-      console.log($scope.staffName);
-      console.log($scope.ccInfo);
-      console.log($scope.ccPhone);
-      console.log($scope.ccReferral);
-      console.log($scope.provider);
-      console.log($scope.status);
+      // Set default or null since firebase can't handle undefineds
+      entry.dateKey = dateKey;
+      entry.firstName = $scope.firstName || null
+      entry.lastName = $scope.lastName || null;
+      entry.dateOfBirth = $scope.dateOfBirth || null;
+      entry.gender = $scope.gender || null;
+      entry.ethnicity = $scope.ethnicity || null;
+      entry.unstablyHoused = $scope.unstablyHoused || 'no';
+      entry.limitedEnglish = $scope.limitedEnglish || 'no';
+      entry.minutes = $scope.minutes || null;
+      entry.staffName = $scope.staffName || null;
+      entry.ccInfo = $scope.ccInfo || null;
+      entry.ccPhone = $scope.ccPhone || null;
+      entry.ccReferral = $scope.ccReferral || null;
+      entry.provider = $scope.provider || null;
+      entry.status = $scope.status || null;
 
-      $scope.project = {};
+      console.log(entry);
+
       var ref = new Firebase('https://np-projectmanagement.firebaseIO.com/project');
       angularFire(ref, $scope, 'project', {})
         .then(function(){
+          if(entry.gender){$scope.project.totals.gender[entry.gender] += 1;}
+          if(entry.ethnicity){$scope.project.totals.ethnicity[entry.ethnicity] += 1;}
+          //if(entry.ccInfo){$scope.project.[entry.ethnicity] += 1;}
           alert('Data Entered');
         });
     }

@@ -52,23 +52,23 @@
           <label>Race:</label>
           <div class="col-md-6">
             <label class="radio-inline" style="width: 50px; padding-left: 10px;">
-              <input type="radio" name="raceRadios" id="raceRadios1" value="aa" ng-model="ethnicity">
+              <input type="radio" name="raceRadios" id="raceRadios1" value="aa" ng-model="race">
               AA
             </label>
             <label class="radio-inline" style="width: 50px; padding-left: 10px;">
-              <input type="radio" name="raceRadios" id="raceRadios2" value="c" ng-model="ethnicity">
+              <input type="radio" name="raceRadios" id="raceRadios2" value="c" ng-model="race">
               C
             </label>
             <label class="radio-inline" style="width: 50px;  padding-left: 10px;">
-              <input type="radio" name="raceRadios" id="raceRadios1" value="l" ng-model="ethnicity">
+              <input type="radio" name="raceRadios" id="raceRadios1" value="l" ng-model="race">
               L
             </label>
             <label class="radio-inline" style="width: 50px; padding: 5px 0 0 10px; margin-left: 0;">
-              <input type="radio" name="raceRadios" id="raceRadios2" value="a" ng-model="ethnicity">
+              <input type="radio" name="raceRadios" id="raceRadios2" value="a" ng-model="race">
               A
             </label>
             <label class="radio-inline" style="width: 80px; padding: 5px 0 0 10px;">
-              <input type="radio" name="raceRadios" id="raceRadios2" value="other" ng-model="ethnicity">
+              <input type="radio" name="raceRadios" id="raceRadios2" value="other" ng-model="race">
               Other
             </label>
           </div>                                
@@ -118,14 +118,14 @@
         <div class="field-box">
           <label>Staff Name:</label>
           <div class="col-md-6">
-            <input class="form-control" type="text" ng-mode="staffName" />
+            <input class="form-control" type="text" ng-model="staffName" />
           </div>                            
         </div>
 
         <div class="field-box">
           <label>Date:</label>
           <div class="col-md-6">
-            <input type="text" value="03/29/2013" class="form-control input-datepicker" ng-mode="date"/>
+            <input type="text" value="03/29/2013" class="form-control input-datepicker" ng-model="date"/>
           </div>
         </div>
 
@@ -146,9 +146,9 @@
           <label class="checkbox" style="width: 100%;">
             <input type="checkbox" id="statusCheckbox3" value="referral" ng-model="ccReferral"> Client referred to service provider
           </label>
-            <label style="margin-left: 48px; font-weight: normal; width: 110px; color: #555555;" ng-model="provider">Name of Provider:</label>
+            <label style="margin-left: 48px; font-weight: normal; width: 110px; color: #555555;">Name of Provider:</label>
             <div class="col-md-6">
-              <input class="form-control" type="text" />
+              <input class="form-control" type="text"  ng-model="provider" />
             </div>                            
         </div>
 

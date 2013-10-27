@@ -4,6 +4,6 @@ angular.module('timWhitneyApp')
   .controller('DataCtrl', function ($scope) {
 
     $scope.enterData = function() {
-      alert('<h1>Data Entered</h1>');
+      alert('Data Entered');
     }
   });

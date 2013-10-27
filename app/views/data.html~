@@ -125,9 +125,13 @@
         <div class="field-box">
           <label>Date:</label>
           <div class="col-md-6">
-            <input type="text" value="03/29/2013" class="form-control input-datepicker" ng-model="date"/>
-          </div>
+            <div class="control-group input-append">
+<input type="text" ng-model="datepicker.date" data-date-format="dd/mm/yyyy" bs-datepicker>
+<button type="button" class="btn" data-toggle="datepicker"><i class="icon-calendar"></i></button>
+</div>          </div>
         </div>
+
+        
 
       </form>
     </div>
@@ -146,9 +150,9 @@
           <label class="checkbox" style="width: 100%;">
             <input type="checkbox" id="statusCheckbox3" value="referral" ng-model="ccReferral"> Client referred to service provider
           </label>
-            <label style="margin-left: 48px; font-weight: normal; width: 110px; color: #555555;" ng-model="provider">Name of Provider:</label>
+            <label style="margin-left: 48px; font-weight: normal; width: 110px; color: #555555;">Name of Provider:</label>
             <div class="col-md-6">
-              <input class="form-control" type="text" />
+              <input class="form-control" type="text"  ng-model="provider" />
             </div>                            
         </div>
 
@@ -183,15 +187,6 @@
 
   </div>
 </div>
-
-<!-- scripts for this page -->
-<script src="js/wysihtml5-0.3.0.js"></script>
-<!--<script src="http://code.jquery.com/jquery-latest.js"></script>-->
-<script src="js/jquery.uniform.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/bootstrap.datepicker.js"></script>
-<script src="js/select2.min.js"></script>
-<script src="js/theme.js"></script>
 
 <!-- call this page plugins -->
 <script type="text/javascript">

@@ -4,6 +4,7 @@ angular.module('timWhitneyApp')
   .controller('DataCtrl', function ($scope) {
 
     $scope.enterData = function() {
+      console.log($scope.datepicker.date);
       console.log($scope.firstName);
       console.log($scope.lastName);
       console.log($scope.dateOfBirth);

@@ -3,11 +3,16 @@
 angular.module('timWhitneyApp')
   .controller('DataCtrl', function ($scope, angularFire) {
 
+    // Retrieve the project data
+    var ref = new Firebase('https://np-projectmanagement.firebaseIO.com/project');
+    angularFire(ref, $scope, 'project', {})
+
+    // Enter new entry and update project details
     $scope.enterData = function() {
       var entry = {},
           date = $scope.datepicker && $scope.datepicker.date,
           // Set the month to a 01-12 or null if undefined
-          month = (date && date.getMonth() && '0' + date.getMonth()) || null,
+          month = (date && date.getMonth() && '0' + (date.getMonth() + 1).toString()) || null,
           year = (date && date.getFullYear()) || null,
           dateKey = null;
 
@@ -17,7 +22,7 @@ angular.module('timWhitneyApp')
         dateKey = year + '-' + month;
       }; 
 
-      // Set default or null since firebase can't handle undefineds
+      // Set default or null since firebase can't handle undefined
       entry.dateKey = dateKey;
       entry.firstName = $scope.firstName || null
       entry.lastName = $scope.lastName || null;
@@ -34,15 +39,41 @@ angular.module('timWhitneyApp')
       entry.provider = $scope.provider || null;
       entry.status = $scope.status || null;
 
-      console.log(entry);
+      // Update applicable fields
+      if(entry.gender){$scope.project.totals.gender[entry.gender] += 1;}
+      if(entry.ethnicity){$scope.project.totals.ethnicity[entry.ethnicity] += 1;}
+      if(dateKey) {
+        if(entry.ccInfo){$scope.project.careActions[dateKey]['info'] += 1;}
+        if(entry.ccPhone){$scope.project.careActions[dateKey]['phone'] += 1;}
+        if(entry.ccReferral){$scope.project.careActions[dateKey]['referral'] += 1;}
+        if(entry.status){$scope.project.screeningActions[dateKey][entry.status] += 1;}
+      }
+      
+      // Necessary for angularFire to recognize updates immediately.
+      safeApply($scope);
 
-      var ref = new Firebase('https://np-projectmanagement.firebaseIO.com/project');
-      angularFire(ref, $scope, 'project', {})
-        .then(function(){
-          if(entry.gender){$scope.project.totals.gender[entry.gender] += 1;}
-          if(entry.ethnicity){$scope.project.totals.ethnicity[entry.ethnicity] += 1;}
-          //if(entry.ccInfo){$scope.project.screeningActions[entry.dateKey]}
-          alert('Data Entered');
-        });
+      // Notify user data entered
+      alert('Data Entered');
     }
+
+    /**
+     * @name safeApply
+     * @procedure
+     *
+     * @description Enum of days of the week
+     * @author https://coderwall.com/p/ngisma (in comments)
+     */ 
+    function safeApply($scope, fn) {
+      var phase = $scope.$root.$$phase;
+      if(phase == '$apply' || phase == '$digest') {
+        if (fn) {$scope.$eval(fn);}
+      } 
+      else {
+        if (fn) {$scope.$apply(fn);}
+        else {$scope.$apply();}
+      }
+    };
+
+  
+  
   });

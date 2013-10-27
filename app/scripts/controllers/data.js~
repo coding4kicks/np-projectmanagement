@@ -39,9 +39,9 @@ angular.module('timWhitneyApp')
       var ref = new Firebase('https://np-projectmanagement.firebaseIO.com/project');
       angularFire(ref, $scope, 'project', {})
         .then(function(){
-          console.log($scope.project.totals.ethnicity[entry.ethnicity] + 1);
-          //if(entry.gender){$scope.project.totals.gender[entry.gender] += 1;}
-          //if(entry.ethnicity){$scope.project.totals.ethnicity[entry.ethnicity] += 1;}
+          if(entry.gender){$scope.project.totals.gender[entry.gender] += 1;}
+          if(entry.ethnicity){$scope.project.totals.ethnicity[entry.ethnicity] += 1;}
+          //if(entry.ccInfo){$scope.project.[entry.ethnicity] += 1;}
           alert('Data Entered');
         });
     }

@@ -11,22 +11,22 @@ angular.module('timWhitneyApp')
         var careActions = [];
         var screeningActions = [];
 
-        for(var month in $scope.project.careActions) {
-          var data = {};
-          data.period = month;
-          data.initiated = $scope.project.careActions[month].initiated;
-          data.ineligible = $scope.project.careActions[month].ineligible;
-          data.notInitiated = $scope.project.careActions[month].notInitiated;
-          careActions.push(data);
-        }
-
         for(var month in $scope.project.screeningActions) {
           var data = {};
           data.period = month;
-          data.info = $scope.project.screeningActions[month].info;
-          data.phone = $scope.project.screeningActions[month].phone;
-          data.referral = $scope.project.screeningActions[month].referral;
+          data.initiated = $scope.project.screeningActions[month].initiated;
+          data.ineligible = $scope.project.screeningActions[month].ineligible;
+          data.notInitiated = $scope.project.screeningActions[month].notInitiated;
           screeningActions.push(data);
+        }
+
+        for(var month in $scope.project.careActions) {
+          var data = {};
+          data.period = month;
+          data.info = $scope.project.careActions[month].info;
+          data.phone = $scope.project.careActions[month].phone;
+          data.referral = $scope.project.careActions[month].referral;
+          careActions.push(data);
         }
 
         var barData = {
@@ -49,7 +49,7 @@ angular.module('timWhitneyApp')
 
             lineData = {
               'element': 'hero-graph',
-              'data': careActions,
+              'data': screeningActions,
               'xkey': 'period',
               'xLabels': 'month',
               'ykeys': ['initiated', 'ineligible', 'notInitiated'],
@@ -58,7 +58,7 @@ angular.module('timWhitneyApp')
 
             areaData = {
               'element': 'hero-area',
-              'data': screeningActions,
+              'data': careActions,
               'xkey': 'period',
               'ykeys': ['info', 'phone', 'referral'],
               'labels': ['Info', 'Phone', 'Referral'],

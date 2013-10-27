@@ -41,7 +41,7 @@ angular.module('timWhitneyApp')
         .then(function(){
           if(entry.gender){$scope.project.totals.gender[entry.gender] += 1;}
           if(entry.ethnicity){$scope.project.totals.ethnicity[entry.ethnicity] += 1;}
-          //if(entry.ccInfo){$scope.project.[entry.ethnicity] += 1;}
+          //if(entry.ccInfo){$scope.project.screeningActions[entry.dateKey]}
           alert('Data Entered');
         });
     }

@@ -12,7 +12,7 @@
                     "other": 5} 
     },
 
-    "careActions": {
+    "screeningActions": {
       "2013-01": {"initiated": 200, "ineligible": 60, "notInitiated": 125},
       "2013-02": {"initiated": 351, "ineligible": 29, "notInitiated": 111},
       "2013-03": {"initiated": 469, "ineligible": 18, "notInitiated": 250},
@@ -27,7 +27,7 @@
       "2013-12": {"initiated": 245, "ineligible": 50, "notInitiated": 100}    
     },
 
-    "screeningActions": {
+    "careActions": {
       "2013-01": {"info": 150, "phone": 99, "referral": 47},
       "2013-02": {"info": 160, "phone": 110, "referral": 41},
       "2013-03": {"info": 180, "phone": 120, "referral": 31},

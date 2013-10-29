@@ -7,6 +7,8 @@ angular.module('timWhitneyApp')
     var ref = new Firebase('https://np-projectmanagement.firebaseIO.com/project');
     angularFire(ref, $scope, 'project', {})
 
+    $scope.races = [{name: 'African American'}, {name: 'Asian'}, {name: 'Caucasian'}, {name: 'Latin'}, {name: 'Other'}];
+
     // Enter new entry and update project details
     $scope.enterData = function() {
       var entry = {},
@@ -39,30 +41,39 @@ angular.module('timWhitneyApp')
       entry.provider = $scope.provider || null;
       entry.status = $scope.status || null;
 
-      console.log(entry);
+      console.log('here');
+      console.log(entry.ethnicity);
+      console.log(typeof entry.ethnicity);
+      // format ethnicity for data entry (make 1 word and lower case)
+      if (entry.ethnicity) {
+        entry.ethnicity = entry.ethnicity.name.split(' ')[0].toLowerCase();
+      }
+      console.log(entry.ethnicity);
 
       // Update applicable fields
-      if(entry.gender){$scope.project.totals.gender[entry.gender] += 1;}
-      if(entry.ethnicity){$scope.project.totals.ethnicity[entry.ethnicity] += 1;}
-      if(dateKey) {
-        if(entry.ccInfo){$scope.project.careActions[dateKey]['info'] += 1;}
-        if(entry.ccPhone){$scope.project.careActions[dateKey]['phone'] += 1;}
-        if(entry.ccReferral){$scope.project.careActions[dateKey]['referral'] += 1;}
-        if(entry.status){$scope.project.screeningActions[dateKey][entry.status] += 1;}
-      }
-      
-      safeApply($scope);
-      alert('Data Entered');
+      //if(entry.gender){$scope.project.totals.gender[entry.gender] += 1;}
+      //if(entry.ethnicity){$scope.project.totals.ethnicity[entry.ethnicity] += 1;}
+      //if(dateKey) {
+      //  if(entry.ccInfo){$scope.project.careActions[dateKey]['info'] += 1;}
+      //  if(entry.ccPhone){$scope.project.careActions[dateKey]['phone'] += 1;}
+      //  if(entry.ccReferral){$scope.project.careActions[dateKey]['referral'] += 1;}
+      //  if(entry.status){$scope.project.screeningActions[dateKey][entry.status] += 1;}
+      //}
+      //
+      //// Necessary for angularFire to recognize updates immediately.
+      //safeApply($scope);
 
+      // Notify user data entered
+      alert('Data Entered');
     }
 
-        /**
-       * @name safeApply
-       * @procedure
-       *
-       * @description Enum of days of the week
-       * @author https://coderwall.com/p/ngisma (in comments)
-       */ 
+    /**
+     * @name safeApply
+     * @procedure
+     *
+     * @description Enum of days of the week
+     * @author https://coderwall.com/p/ngisma (in comments)
+     */ 
     function safeApply($scope, fn) {
       var phase = $scope.$root.$$phase;
       if(phase == '$apply' || phase == '$digest') {

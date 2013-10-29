@@ -51,29 +51,9 @@
         <div class="field-box">
           <label>Race:</label>
           <div class="col-md-6">
-            <label class="radio-inline" style="width: 50px; padding-left: 10px;">
-              <input type="radio" name="raceRadios" id="raceRadios1" value="african" ng-model="ethnicity">
-              AA
-            </label>
-            <label class="radio-inline" style="width: 50px; padding-left: 10px;">
-              <input type="radio" name="raceRadios" id="raceRadios2" value="caucasian" ng-model="ethnicity">
-              C
-            </label>
-            <label class="radio-inline" style="width: 50px;  padding-left: 10px;">
-              <input type="radio" name="raceRadios" id="raceRadios1" value="latin" ng-model="ethnicity">
-              L
-            </label>
-            <label class="radio-inline" style="width: 50px; padding: 5px 0 0 10px; margin-left: 0;">
-              <input type="radio" name="raceRadios" id="raceRadios2" value="asian" ng-model="ethnicity">
-              A
-            </label>
-            <label class="radio-inline" style="width: 80px; padding: 5px 0 0 10px;">
-              <input type="radio" name="raceRadios" id="raceRadios2" value="other" ng-model="ethnicity">
-              Other
-            </label>
-          </div>                                
+            <select class="select2" style="width:200px;" ng-model="ethnicity" ng-options="race.name for race in races"></select>
+          </div>
         </div>
-
       </form>
     </div>
 

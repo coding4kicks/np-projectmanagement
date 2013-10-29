@@ -7,6 +7,8 @@ angular.module('timWhitneyApp')
     var ref = new Firebase('https://np-projectmanagement.firebaseIO.com/project');
     angularFire(ref, $scope, 'project', {})
 
+    $scope.races = [{name: 'African American'}, {name: 'Asian'}, {name: 'Caucasian'}, {name: 'Latin'}, {name: 'Other'}];
+
     // Enter new entry and update project details
     $scope.enterData = function() {
       var entry = {},
@@ -38,6 +40,11 @@ angular.module('timWhitneyApp')
       entry.ccReferral = $scope.ccReferral || null;
       entry.provider = $scope.provider || null;
       entry.status = $scope.status || null;
+
+      // format ethnicity for data entry (make 1 word and lower case)
+      if (entry.ethnicity) {
+        entry.ethnicity = entry.ethnicity.name.split(' ')[0].toLowerCase();
+      }
 
       // Update applicable fields
       if(entry.gender){$scope.project.totals.gender[entry.gender] += 1;}

@@ -4,8 +4,8 @@ angular.module('timWhitneyApp', ['firebase'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        templateUrl: 'views/charts.html',
+        controller: 'ChartsCtrl'
       })
       .when('/undefined', {
         templateUrl: 'views/undefined.html',
@@ -20,15 +20,14 @@ angular.module('timWhitneyApp', ['firebase'])
         controller: 'DataCtrl'
       })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/charts'
       });
   })
 
   .controller('SideNavCtrl', function($scope) {
 
     $scope.navState = {};
-    $scope.navState.home = 'active';
-    $scope.navState.charts = '';
+    $scope.navState.charts = 'active';
     $scope.navState.data = '';
 
     $scope.activate = function(navItem){

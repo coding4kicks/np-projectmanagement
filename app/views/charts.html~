@@ -10,7 +10,7 @@
   <h1>Project Name</h1>
 
     <!-- morris graph chart -->
-    <div class="row section">
+    <div class="row">
         <div class="col-md-12">
             <h4 class="title">Screening Status</h4>
         </div>
@@ -20,7 +20,7 @@
     </div>
 
     <!-- morris stacked chart -->
-    <div class="row">
+    <div class="row section">
         <div class="col-md-12">
             <h4 class="title">CountyCare Enrollment Actions</h4>
         </div>

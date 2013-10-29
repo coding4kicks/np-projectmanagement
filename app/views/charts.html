@@ -8,10 +8,27 @@
 
 <div id="pad-wrapper">
   <h1>Project Name</h1>
-  <br>
+  <div class="row section">
+    <div class="col-md-3">
+      <h5>Total Seen</h5>
+      <h2 class="number">{{totalSeen}}</h2>
+    </div>
+    <div class="col-md-3">
+      <h5>Total Initiated</h5>
+      <h2 class="number">{{totalInitiated}}</h2>
+    </div>
+    <div class="col-md-3">
+      <h5>Total Ineligible</h5>
+      <h2 class="number">{{totalIneligible}}</h2>
+    </div>
+    <div class="col-md-3">
+      <h5>Total Not Inititated</h5>
+      <h2 class="number">{{totalNotInitiated}}</h2>
+    </div>
+  </div>  
 
     <!-- morris graph chart -->
-    <div class="row">
+    <div class="row section">
         <div class="col-md-12">
             <h4 class="title">Screening Status</h4>
         </div>

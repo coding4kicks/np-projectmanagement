@@ -23,8 +23,8 @@
       "2013-08": {"initiated": 245, "ineligible": 50, "notInitiated": 145},
       "2013-09": {"initiated": 171, "ineligible": 76, "notInitiated": 80},
       "2013-10": {"initiated": 155, "ineligible": 81, "notInitiated": 99},
-      "2013-11": {"initiated": 226, "ineligible": 20, "notInitiated": 110},
-      "2013-12": {"initiated": 245, "ineligible": 50, "notInitiated": 100}    
+      "2013-11": {"initiated": 0, "ineligible": 0, "notInitiated": 0},
+      "2013-12": {"initiated": 0, "ineligible": 0, "notInitiated": 0}    
     },
 
     "careActions": {
@@ -38,8 +38,8 @@
       "2013-08": {"info": 100, "phone": 80, "referral": 75},
       "2013-09": {"info": 70, "phone": 45, "referral": 58},
       "2013-10": {"info": 154, "phone": 76, "referral": 91},
-      "2013-11": {"info": 200, "phone": 88, "referral": 79},
-      "2013-12": {"info": 250, "phone": 110, "referral": 11}
+      "2013-11": {"info": 0, "phone": 0, "referral": 0},
+      "2013-12": {"info": 0, "phone": 0, "referral": 0}
     }
   }
 }

@@ -41,27 +41,23 @@ angular.module('timWhitneyApp')
       entry.provider = $scope.provider || null;
       entry.status = $scope.status || null;
 
-      console.log('here');
-      console.log(entry.ethnicity);
-      console.log(typeof entry.ethnicity);
       // format ethnicity for data entry (make 1 word and lower case)
       if (entry.ethnicity) {
         entry.ethnicity = entry.ethnicity.name.split(' ')[0].toLowerCase();
       }
-      console.log(entry.ethnicity);
 
       // Update applicable fields
-      //if(entry.gender){$scope.project.totals.gender[entry.gender] += 1;}
-      //if(entry.ethnicity){$scope.project.totals.ethnicity[entry.ethnicity] += 1;}
-      //if(dateKey) {
-      //  if(entry.ccInfo){$scope.project.careActions[dateKey]['info'] += 1;}
-      //  if(entry.ccPhone){$scope.project.careActions[dateKey]['phone'] += 1;}
-      //  if(entry.ccReferral){$scope.project.careActions[dateKey]['referral'] += 1;}
-      //  if(entry.status){$scope.project.screeningActions[dateKey][entry.status] += 1;}
-      //}
-      //
-      //// Necessary for angularFire to recognize updates immediately.
-      //safeApply($scope);
+      if(entry.gender){$scope.project.totals.gender[entry.gender] += 1;}
+      if(entry.ethnicity){$scope.project.totals.ethnicity[entry.ethnicity] += 1;}
+      if(dateKey) {
+        if(entry.ccInfo){$scope.project.careActions[dateKey]['info'] += 1;}
+        if(entry.ccPhone){$scope.project.careActions[dateKey]['phone'] += 1;}
+        if(entry.ccReferral){$scope.project.careActions[dateKey]['referral'] += 1;}
+        if(entry.status){$scope.project.screeningActions[dateKey][entry.status] += 1;}
+      }
+      
+      // Necessary for angularFire to recognize updates immediately.
+      safeApply($scope);
 
       // Notify user data entered
       alert('Data Entered');

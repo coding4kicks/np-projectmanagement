@@ -38,7 +38,6 @@ angular.module('timWhitneyApp')
       entry.ccInfo = $scope.ccInfo || null;
       entry.ccPhone = $scope.ccPhone || null;
       entry.ccReferral = $scope.ccReferral || null;
-      entry.provider = $scope.provider || null;
       entry.status = $scope.status || null;
 
       // format ethnicity for data entry (make 1 word and lower case)

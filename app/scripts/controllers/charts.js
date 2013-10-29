@@ -4,6 +4,11 @@ angular.module('timWhitneyApp')
   .controller('ChartsCtrl', function ($scope, $window, angularFire) {
 
     $scope.project = {};
+    $scope.totalSeen = 0;
+    $scope.totalInitiated = 0;
+    $scope.totalIneligible = 0;
+    $scope.totalNotInitiated = 0;
+
     var ref = new Firebase('https://np-projectmanagement.firebaseIO.com/project');
     angularFire(ref, $scope, 'project', {})
       .then(function(){
@@ -18,6 +23,10 @@ angular.module('timWhitneyApp')
           data.ineligible = $scope.project.screeningActions[month].ineligible;
           data.notInitiated = $scope.project.screeningActions[month].notInitiated;
           screeningActions.push(data);
+          $scope.totalInitiated += data.initiated;
+          $scope.totalIneligible += data.ineligible;
+          $scope.totalNotInitiated += data.initiated;
+          $scope.totalSeen += (data.initiated + data.ineligible + data.initiated);
         }
 
         for(var month in $scope.project.careActions) {

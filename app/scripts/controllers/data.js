@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('timWhitneyApp')
-  .controller('DataCtrl', function ($scope, angularFire) {
+  .controller('DataCtrl', function ($scope, $route, angularFire) {
 
     // Retrieve the project data
     var ref = new Firebase('https://np-projectmanagement.firebaseIO.com/project');
@@ -55,11 +55,15 @@ angular.module('timWhitneyApp')
         if(entry.status){$scope.project.screeningActions[dateKey][entry.status] += 1;}
       }
       
-      // Necessary for angularFire to recognize updates immediately.
+      //Necessary for angularFire to recognize updates immediately.    
       safeApply($scope);
 
       // Notify user data entered
       alert('Data Entered');
+
+      // Reload to a clean page
+      $route.reload();
+      
     }
 
     /**

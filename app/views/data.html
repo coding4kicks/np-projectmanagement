@@ -1,9 +1,12 @@
 <!-- this page specific styles -->
 <link rel="stylesheet" href="css/compiled/form-showcase.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/compiled/datatables.css" type="text/css" media="screen" />
+
 <!-- libraries -->
 <link href="css/lib/uniform.default.css" type="text/css" rel="stylesheet">
 <link href="css/lib/select2.css" type="text/css" rel="stylesheet">
 <link href="css/lib/bootstrap.datepicker.css" type="text/css" rel="stylesheet">
+<link href="css/lib/jquery.dataTables.css" type="text/css" rel="stylesheet" />
 
 <div id="pad-wrapper" class="form-page">
   <div class="row form-wrapper">
@@ -162,9 +165,38 @@
     </div>
 
   </div>
+  <div class="row section">
+    <h3>Most Recent Entries</h3>
+    <br>
+    <div class="row">
+      <div class="col-md-12">
+
+          <table cellpadding="0" cellspacing="0" border="0" class="" id="example">
+              <thead>
+                  <tr role="row">
+                      <th tabindex="0" rowspan="1" colspan="1">Name
+                      </th>
+                      <th tabindex="0" rowspan="1" colspan="1">Date
+                      </th>
+                      <th tabindex="0" rowspan="1" colspan="1">Status
+                      </th>
+                  </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="entry in entries">
+                  <td>{{entry.lastName}}</td>
+                  <td>{{entry.dateKey}}</td>
+                  <td>{{entry.status}}</td>
+                </tr>
+              </tbody>
+          </table>
+        </div>
+      </div>
+  </div>
 </div>
 
 <!-- call this page plugins -->
+<script src="js/jquery.dataTables.js"></script>
 <script type="text/javascript">
     $(function () {
 
@@ -177,4 +209,10 @@
         });
 
     });
+
+   //$(document).ready(function() {
+   //     $('#example').dataTable({
+   //         "sPaginationType": "full_numbers"
+   //     });
+   //});
 </script>

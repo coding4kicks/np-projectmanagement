@@ -9,7 +9,14 @@ angular.module('timWhitneyApp')
 
     // Retrieve last 25 entries
     var entryRef = new Firebase('https://np-projectmanagement.firebaseIO.com/entries');
-    angularFire(entryRef.limit(25), $scope, 'entries');
+    angularFire(entryRef, $scope, 'entries').then(function(data) {
+      // Allow time for table to populate after data is recieved
+      $timeout(function(data){
+        $('#example').dataTable({
+          "sPaginationType": "full_numbers"
+        });
+      }, 100);
+    });
 
     $scope.races = [{name: 'African American'}, {name: 'Asian'}, {name: 'Caucasian'}, {name: 'Latin'}, {name: 'Other'}];
 

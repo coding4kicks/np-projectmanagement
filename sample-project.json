@@ -41,5 +41,196 @@
       "2013-11": {"info": 0, "phone": 0, "referral": 0},
       "2013-12": {"info": 0, "phone": 0, "referral": 0}
     }
+  },
+  "entries": {  
+    "0": {
+      "dateKey": "2013-08",
+      "lastName": "Young",
+      "limitedEnglish": "no", 
+      "status": "initiated",
+      "unstablyHoused": "no"
+    },
+    "1": {
+      "dateKey": "2013-09",
+      "lastName": "Smith",
+      "limitedEnglish": "no", 
+      "status": "initiated",
+      "unstablyHoused": "no"
+    },
+    "2": {
+      "dateKey": "2013-09",
+      "lastName": "Alison",
+      "limitedEnglish": "no", 
+      "status": "ineligible",
+      "unstablyHoused": "no"
+    },
+    "3": {
+      "dateKey": "2013-09",
+      "lastName": "Stevens",
+      "limitedEnglish": "no", 
+      "status": "initiated",
+      "unstablyHoused": "no"
+    },
+    "4": {
+      "dateKey": "2013-09",
+      "lastName": "Adams",
+      "limitedEnglish": "no", 
+      "status": "notInitiated",
+      "unstablyHoused": "no"
+    }, 
+    "5": {
+      "dateKey": "2013-09",
+      "lastName": "Metz",
+      "limitedEnglish": "no", 
+      "status": "notInitiated",
+      "unstablyHoused": "no"
+    },
+    "6": {
+      "dateKey": "2013-09",
+      "lastName": "Klinger",
+      "limitedEnglish": "no", 
+      "status": "initiated",
+      "unstablyHoused": "no"
+    },
+    "7": {
+      "dateKey": "2013-09",
+      "lastName": "Merbaum",
+      "limitedEnglish": "no", 
+      "status": "initiated",
+      "unstablyHoused": "no"
+    },
+    "8": {
+      "dateKey": "2013-09",
+      "lastName": "Kadlubar",
+      "limitedEnglish": "no", 
+      "status": "ineligible",
+      "unstablyHoused": "no"
+    },
+    "9": {
+      "dateKey": "2013-09",
+      "lastName": "Rhodes",
+      "limitedEnglish": "no", 
+      "status": "notInitiated",
+      "unstablyHoused": "no"
+    },
+    "10": {
+      "dateKey": "2013-09",
+      "lastName": "Jefferson",
+      "limitedEnglish": "no", 
+      "status": "initiated",
+      "unstablyHoused": "no"
+    }, 
+    "11": {
+      "dateKey": "2013-09",
+      "lastName": "Washington",
+      "limitedEnglish": "no", 
+      "status": "initiated",
+      "unstablyHoused": "no"
+    },
+    "12": {
+      "dateKey": "2013-09",
+      "lastName": "Adams",
+      "limitedEnglish": "no", 
+      "status": "initiated",
+      "unstablyHoused": "no"
+    },
+    "13": {
+      "dateKey": "2013-09",
+      "lastName": "Reagan",
+      "limitedEnglish": "no", 
+      "status": "ineligible",
+      "unstablyHoused": "no"
+    },
+    "14": {
+      "dateKey": "2013-09",
+      "lastName": "Bush",
+      "limitedEnglish": "no", 
+      "status": "ineligible",
+      "unstablyHoused": "no"
+    },
+    "15": {
+      "dateKey": "2013-09",
+      "lastName": "Carter",
+      "limitedEnglish": "no", 
+      "status": "initiated",
+      "unstablyHoused": "no"
+    },
+    "16": {
+      "dateKey": "2013-10",
+      "lastName": "Rosevelt",
+      "limitedEnglish": "no", 
+      "status": "notIitiated",
+      "unstablyHoused": "no"
+    }, 
+    "17": {
+      "dateKey": "2013-10",
+      "lastName": "Jackson",
+      "limitedEnglish": "no", 
+      "status": "notInitiated",
+      "unstablyHoused": "no"
+    },
+    "18": {
+      "dateKey": "2013-10",
+      "lastName": "Obama",
+      "limitedEnglish": "no", 
+      "status": "initiated",
+      "unstablyHoused": "no"
+    },
+    "19": {
+      "dateKey": "2013-10",
+      "lastName": "Young",
+      "limitedEnglish": "no", 
+      "status": "ineligible",
+      "unstablyHoused": "no"
+    },
+    "20": {
+      "dateKey": "2013-10",
+      "lastName": "Ford",
+      "limitedEnglish": "no", 
+      "status": "initiated",
+      "unstablyHoused": "no"
+    },
+    "21": {
+      "dateKey": "2013-10",
+      "lastName": "Nixon",
+      "limitedEnglish": "no", 
+      "status": "initiated",
+      "unstablyHoused": "no"
+    },
+    "22": {
+      "dateKey": "2013-10",
+      "lastName": "Wilson",
+      "limitedEnglish": "no", 
+      "status": "ineligible",
+      "unstablyHoused": "no"
+    }, 
+    "23": {
+      "dateKey": "2013-10",
+      "lastName": "Taft",
+      "limitedEnglish": "no", 
+      "status": "initiated",
+      "unstablyHoused": "no"
+    },
+    "24": {
+      "dateKey": "2013-10",
+      "lastName": "Lincon",
+      "limitedEnglish": "no", 
+      "status": "initiated",
+      "unstablyHoused": "no"
+    },
+    "25": {
+      "dateKey": "2013-10",
+      "lastName": "Kennedy",
+      "limitedEnglish": "no", 
+      "status": "notInitiated",
+      "unstablyHoused": "no"
+    },
+    "26": {
+      "dateKey": "2013-10",
+      "lastName": "Hardy",
+      "limitedEnglish": "no", 
+      "status": "notInitiated",
+      "unstablyHoused": "no"
+    }  
   }
 }

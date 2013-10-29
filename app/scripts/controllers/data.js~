@@ -1,11 +1,15 @@
 'use strict';
 
 angular.module('timWhitneyApp')
-  .controller('DataCtrl', function ($scope, $route, angularFire) {
+  .controller('DataCtrl', function ($scope, $route, $timeout, angularFire) {
 
     // Retrieve the project data
     var ref = new Firebase('https://np-projectmanagement.firebaseIO.com/project');
     angularFire(ref, $scope, 'project', {})
+
+    // Retrieve last 25 entries
+    //var entryRef = new Firebase('https://np-projectmanagement.firebaseIO.com/entries');
+    //angularFire(entryRef.limit(25), $scope, 'entries');
 
     $scope.races = [{name: 'African American'}, {name: 'Asian'}, {name: 'Caucasian'}, {name: 'Latin'}, {name: 'Other'}];
 
@@ -45,25 +49,43 @@ angular.module('timWhitneyApp')
         entry.ethnicity = entry.ethnicity.name.split(' ')[0].toLowerCase();
       }
 
-      // Update applicable fields
-      if(entry.gender){$scope.project.totals.gender[entry.gender] += 1;}
-      if(entry.ethnicity){$scope.project.totals.ethnicity[entry.ethnicity] += 1;}
-      if(dateKey) {
+      if(isValid(entry)) {
+        console.log(dateKey);
+        console.log(entry.gender);
+        console.log($scope.project.totals.ethnicity);
+        // Update applicable fields of project
+        if(entry.gender){$scope.project.totals.gender[entry.gender] += 1;}
+        if(entry.ethnicity){$scope.project.totals.ethnicity[entry.ethnicity] += 1;}
         if(entry.ccInfo){$scope.project.careActions[dateKey]['info'] += 1;}
         if(entry.ccPhone){$scope.project.careActions[dateKey]['phone'] += 1;}
         if(entry.ccReferral){$scope.project.careActions[dateKey]['referral'] += 1;}
         if(entry.status){$scope.project.screeningActions[dateKey][entry.status] += 1;}
+
+        // Add the entry to entries
+        //$scope.entries.push(entry);
+        console.log('here');
+
+        //Necessary for angularFire to recognize updates immediately.    
+        safeApply($scope);
+
+        // Notify user data entered
+        alert('Data Entered');
+
+        // Reload to a clean page (timeout is necessary for angularFire to implicitly synch)
+        $timeout(function() {$route.reload()}, 10);
+      }
+      else {
+        alert('Valid entry must have last name, date, and screening status.');
       }
       
-      //Necessary for angularFire to recognize updates immediately.    
-      safeApply($scope);
 
-      // Notify user data entered
-      alert('Data Entered');
-
-      // Redirect to a clean page
-      $route.reload();
       
+    }
+
+    // Determine if entry is valid
+    function isValid(entry) {
+      if (entry.status && entry.lastName && entry.dateKey) {return true}
+      else {return false}
     }
 
     /**
@@ -83,7 +105,5 @@ angular.module('timWhitneyApp')
         else {$scope.$apply();}
       }
     };
-
-  
   
   });

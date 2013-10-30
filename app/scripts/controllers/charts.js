@@ -25,7 +25,7 @@ angular.module('timWhitneyApp')
           screeningActions.push(data);
           $scope.totalInitiated += data.initiated;
           $scope.totalIneligible += data.ineligible;
-          $scope.totalNotInitiated += data.initiated;
+          $scope.totalNotInitiated += data.notInitiated;
           $scope.totalSeen += (data.initiated + data.ineligible + data.initiated);
         }
 

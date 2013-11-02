@@ -19,6 +19,10 @@ angular.module('timWhitneyApp', ['firebase'])
         templateUrl: 'views/data.html',
         controller: 'DataCtrl'
       })
+      .when('/messages', {
+        templateUrl: 'views/messages.html',
+        controller: 'MessagesCtrl'
+      })
       .otherwise({
         redirectTo: '/charts'
       });

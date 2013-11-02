@@ -26,7 +26,7 @@ angular.module('timWhitneyApp')
           $scope.totalInitiated += data.initiated;
           $scope.totalIneligible += data.ineligible;
           $scope.totalNotInitiated += data.notInitiated;
-          $scope.totalSeen += (data.initiated + data.ineligible + data.initiated);
+          $scope.totalSeen += (data.initiated + data.ineligible + data.notInitiated);
         }
 
         for(var month in $scope.project.careActions) {

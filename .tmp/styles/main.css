@@ -1,4 +1,59 @@
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/scottyoung\/projects\/tim-whitney\/app\/styles\/main\.scss}line{font-family:\000033}}
+/* line 3, ../../app/styles/main.scss */
 .number {
   color: #32A0EE;
+}
+
+/* line 7, ../../app/styles/main.scss */
+.messages .item .display {
+  border-radius: 50px 50px 50px 50px;
+  float: left;
+  margin-right: 15px;
+}
+
+/* line 13, ../../app/styles/main.scss */
+.messages .item {
+  border-bottom: 1px solid #e7e8ea;
+  color: #363636;
+  display: block;
+  height: 80px;
+  padding: 10px 20px 15px;
+  position: relative;
+  text-decoration: none;
+  transition: all 0.25s linear 0s;
+}
+
+/* line 24, ../../app/styles/main.scss */
+.messages .item .name {
+  color: #404951;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* line 30, ../../app/styles/main.scss */
+.messages .item .msg {
+  color: #636363;
+  font-size: 11px;
+  line-height: 13px;
+  position: relative;
+  top: 2px;
+}
+
+/* line 38, ../../app/styles/main.scss */
+.messages .item .time {
+  bottom: 6px;
+  color: #82A3C1;
+  font-size: 11px;
+  font-style: italic;
+  font-weight: 600;
+  margin-right: 5px;
+  min-width: 60px;
+  position: absolute;
+  right: 0;
+}
+
+/* line 50, ../../app/styles/main.scss */
+.messages .item .time i {
+  color: #CFCFCF;
+  font-size: 13px;
+  margin-right: 1px;
 }

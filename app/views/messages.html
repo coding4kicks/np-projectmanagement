@@ -1,1 +1,60 @@
-<p>This is the messages view.</p>
+<!-- this page specific styles -->
+<link rel="stylesheet" href="css/compiled/form-showcase.css" type="text/css" media="screen" />
+
+<div id="pad-wrapper" class="form-page">
+  <div class="row">
+    <h1>Messages</h1>
+  </div>
+  <div class="row form-wrapper">
+    <div class="col-md-6 column messages">
+      <a href="#" class="item">
+        <img src="img/contact-img.png" class="display" />
+        <div class="name">Alejandra Galván</div>
+        <div class="msg">
+            There are many variations of available, but the majority have suffered alterations.
+        </div>
+        <span class="time"><i class="icon-time"></i> 13 min.</span>
+      </a>
+      <a href="#" class="item">
+        <img src="img/contact-img2.png" class="display" />
+        <div class="name">Alejandra Galván</div>
+        <div class="msg">
+            There are many variations of available, have suffered alterations.
+        </div>
+        <span class="time"><i class="icon-time"></i> 26 min.</span>
+      </a>
+      <a href="#" class="item last">
+        <img src="img/contact-img.png" class="display" />
+        <div class="name">Alejandra Galván</div>
+        <div class="msg">
+            There are many variations of available, but the majority have suffered alterations.
+        </div>
+        <span class="time"><i class="icon-time"></i> 48 min.</span>
+      </a>
+    </div>
+
+    <div class="col-md-6 column">
+      <h3>Leave A Message</h3>
+      <br>
+      <form>
+
+        <div class="field-box">
+          <label>Your Name:</label>
+          <div class="col-md-7">
+            <input class="form-control" type="text" ng-model="lastName" />
+          </div>                            
+        </div>
+
+        <div class="field-box">
+          <label>Message:</label>
+          <div class="col-md-7">
+            <textarea class="form-control" rows="4"></textarea>
+          </div>                            
+        </div>
+        <div>
+          <a class="btn-glow" ng-click="enterData()">Send Message</a>
+        <div>
+      </form>
+    </div>
+  </div>
+</div>
